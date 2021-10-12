@@ -18,7 +18,7 @@ console.log(floorName.join(", "));//輸出樓層
 //延遲
 //方法一 寫一個function
 //用getTime取得時間後持續計算時間 直到時間到才跳出迴圈
-//時間到之前之後的程式碼都不執行
+//時間到之前 以下的程式碼都不執行
 function Dealy1(sec){
     var start = new Date().getTime();
     var now = 0;
