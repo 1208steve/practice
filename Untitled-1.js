@@ -1,4 +1,4 @@
-
+const readline = require('readline-sync');
 
 var weight = readline.question('請輸入您的體重(kg)?');
 if (weight < 60 || weight > 200)
