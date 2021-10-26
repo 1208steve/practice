@@ -80,8 +80,8 @@ for (var i = 0; i < row; i++) {
     } 
 }
 
-console.log("Max step:" + maxNum);
-console.log(maxArr);
+console.log("Max step:" + maxNum);//印出最大的步數
+console.log(maxArr);//印出能夠走出最大步數的 R與C 還有在地圖中顯示的內容
 
 
 
