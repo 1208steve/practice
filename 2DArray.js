@@ -23,13 +23,13 @@ for (var i = 0; i < row; i++) {
 for (var i = 0; i < row; i++) {
     for (var j = 0; j < col; j++){
         var root = map[i][j].split(",");
-        couarr[i][j] = DFS(root[0], root[1], [map[i][j]], 1);
+        couarr[i][j] = DFS(root[0], root[1], [i + "," + j], 1);
     }
 }
 
 function DFS(R, C, arr, cou){
-    if(arr.indexOf(map[R][C]) == -1){
-        arr.push(map[R][C]);
+    if(arr.indexOf(R + "," + C) == -1){
+        arr.push(R + "," + C);
         var node = map[R][C].split(",");
         return DFS(node[0], node[1], arr, cou + 1);
     }else{
@@ -43,12 +43,12 @@ function DFS(R, C, arr, cou){
 for (var i = 0; i < row; i++) {
     for (var j = 0; j < col; j++){
         var now = map[i][j].split(",");
-        var arr = [map[i][j]];
+        var arr = [i + "," + j];
         var cou = 1;
         
         while(true){
-            if(arr.indexOf(map[now[0]][now[1]]) == -1){
-                arr.push(map[now[0]][now[1]]);
+            if(arr.indexOf(now[0] + "," + now[1]) == -1){
+                arr.push(now[0] + "," + now[1]);
                 cou++;
                 now = map[now[0]][now[1]].split(",");
             }else{
