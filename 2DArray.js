@@ -73,14 +73,14 @@ for (var i = 0; i < row; i++) {
     for (var j = 0; j < col; j++){
         if(couarr[i][j] > maxNum){
             maxNum = couarr[i][j];
-            maxArr = ["[" + i + "]" + "[" + j + "] " + map[i][j]];
-        }else if(couarr[i][j] = maxNum){
-            maxArr.push("[" + i + "]" + "[" + j + "] " + map[i][j]);
+            maxArr = ["[" + i + "]" + "[" + j + "]: " + map[i][j]];
+        }else if(couarr[i][j] == maxNum){
+            maxArr.push("[" + i + "]" + "[" + j + "]: " + map[i][j]);
         }
     } 
 }
 
-console.log("Max step:" + maxNum);//印出最大的步數
+console.log("Max step:" + maxNum + "\n" + "能夠走出最大步數的 R與C: ");//印出最大的步數
 console.log(maxArr);//印出能夠走出最大步數的 R與C 還有在地圖中顯示的內容
 
 
