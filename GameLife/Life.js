@@ -21,7 +21,6 @@ Life.prototype.Initialize = function(){
     this.grid[3][4] = LIVE;
     this.grid[3][5] = LIVE;
     this.grid[3][6] = LIVE;
-    //this.grid[3][7] = LIVE;
 }
 
 Life.prototype.getStatusAt = function(row, col){
@@ -88,7 +87,6 @@ class Board{
                }
                this.ctx2d.strokeRect(c*this.size, r*this.size, this.size, this.size);
            }
-           
        } 
     }
 }
@@ -96,7 +94,6 @@ class Board{
 
 //unit test
 var game = new Life(document.getElementById("input1").value,document.getElementById("input2").value);
-//console.log(JSON.stringify(game))
 game.Initialize();
 var gameBorad = new Board(game);
 gameBorad.draw();
@@ -112,11 +109,17 @@ function clickHandler(event){
     if(game.getStatusAt(row, col)== LIVE){
        game.setStatusAt(row,col, DEAD);
        gameBorad.ctx2d.fillStyle = "#ffffff";
-       gameBorad.ctx2d.fillRect(col * gameBorad.size, row * gameBorad.size, gameBorad.size, gameBorad.size);
-       gameBorad.ctx2d.fillStyle = "#ff0000";
     }else{
-        game.setStatusAt(row,col, LIVE);
-        gameBorad.ctx2d.fillRect(col * gameBorad.size, row * gameBorad.size, gameBorad.size, gameBorad.size);
+        game.setStatusAt(row,col, LIVE); 
     }
+    gameBorad.ctx2d.fillRect(col * gameBorad.size, row * gameBorad.size, gameBorad.size, gameBorad.size);
+    gameBorad.ctx2d.fillStyle = "#ff0000";
     gameBorad.ctx2d.strokeRect(col * gameBorad.size, row * gameBorad.size, gameBorad.size, gameBorad.size);
+}
+
+function next1(){
+    game = new Life(document.getElementById("input1").value,document.getElementById("input2").value);
+    gameBorad = new Board(game);
+    game.Initialize();
+    gameBorad.draw();
 }
