@@ -95,7 +95,7 @@ class Board{
 
 
 //unit test
-var game = new Life(30,30);
+var game = new Life(document.getElementById("input1").value,document.getElementById("input2").value);
 //console.log(JSON.stringify(game))
 game.Initialize();
 var gameBorad = new Board(game);
